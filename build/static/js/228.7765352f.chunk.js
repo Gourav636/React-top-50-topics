@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunktop_50_react_practice=self.webpackChunktop_50_react_practice||[]).push([[228],{228:(e,c,a)=>{a.r(c),a.d(c,{default:()=>s});a(483);var l=a(723);const s=function(e){let{closeModal:c}=e;return(0,l.jsx)("div",{className:"modal",children:(0,l.jsxs)("div",{className:"modal-content",children:[(0,l.jsx)("h2",{children:"This is a lazy-loaded Modal"}),(0,l.jsx)("button",{onClick:c,children:"Close"})]})})}}}]);
+//# sourceMappingURL=228.7765352f.chunk.js.map

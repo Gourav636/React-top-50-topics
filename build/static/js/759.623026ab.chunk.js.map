@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/759.623026ab.chunk.js","mappings":"uKAIA,QAJA,WACE,OAAOA,EAAAA,EAAAA,KAAA,OAAAC,SAAK,eACd,C","sources":["suspense-list-example/ComponentC.js"],"sourcesContent":["function ComponentC() {\r\n  return <div>Component C</div>;\r\n}\r\n\r\nexport default ComponentC;\r\n"],"names":["_jsx","children"],"sourceRoot":""}

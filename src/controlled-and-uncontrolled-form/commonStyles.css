@@ -1,0 +1,30 @@
+/* Common styles for both Controlled and Uncontrolled Forms */
+.container {
+    width: auto;
+    height: 50px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+}
+
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #ddd;
+}
+
+.error {
+    color: red;
+}

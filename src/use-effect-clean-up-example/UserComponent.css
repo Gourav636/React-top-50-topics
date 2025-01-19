@@ -1,0 +1,65 @@
+/* Custom CSS for UserComponent */
+.user-table {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    overflow-x: auto;
+    /* Allows horizontal scrolling if the content overflows */
+}
+
+.table {
+    width: 100%;
+    /* Makes the table fill the available space inside its container */
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+}
+
+.table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2;
+}
+
+.table-bordered {
+    border: 1px solid #ddd;
+}
+
+.table a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.table a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+h3 {
+    color: #d9534f;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.loading-message {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+}

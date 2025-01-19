@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunktop_50_react_practice=self.webpackChunktop_50_react_practice||[]).push([[759],{759:(e,t,c)=>{c.r(t),c.d(t,{default:()=>n});var r=c(723);const n=function(){return(0,r.jsx)("div",{children:"Component C"})}}}]);
+//# sourceMappingURL=759.623026ab.chunk.js.map
