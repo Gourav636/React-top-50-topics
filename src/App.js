@@ -15,13 +15,14 @@ import LinkingRouting from "./routing-handling-example/linking-routing";
 import NestedRouting from "./routing-handling-example/nested-routing";
 import DynamicRouting from "./routing-handling-example/dynamic-routing";
 import UserComponent from "./use-effect-clean-up-example/user-api";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import UserDetail from "./use-effect-clean-up-example/user-detail";
 import SentimentAnalysis from "./ai-practices/SentimentAnalysis.js";
 import Parent from "./react-portals-example/parent.js";
 import CallbackParent from "./use-callback-hook-example/callback-parent.js";
 import CallbackChild from "./use-callback-hook-example/callback-child.js";
 import ForwardRefParentComponent from "./forward-ref-example/forward-ref-parent-component.js";
+import AiList from "./ai-practices/ai-list.js";
 
 const App = () => {
   return (
@@ -103,10 +104,6 @@ const App = () => {
             </Suspense>
           </div>
         </fieldset>
-        <fieldset style={{ width: "600px" }}>
-          <legend>Ai-Example</legend>
-          <SentimentAnalysis />
-        </fieldset>
         <fieldset>
           <legend>react-portal-example</legend>
           <div id="modal-root"></div>
@@ -123,6 +120,13 @@ const App = () => {
         <fieldset>
           <legend>forward-ref-example</legend>
           <ForwardRefParentComponent />
+        </fieldset>
+        <fieldset>
+          <legend>AI Example</legend>
+          <Link to="/AiList">Go to AI List</Link>
+          <Routes>
+            <Route path="/AiList/*" element={<AiList />} />
+          </Routes>
         </fieldset>
       </div>
     </Router>
