@@ -12,7 +12,9 @@ function ProductImages() {
 
   const fetchImages = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/get-images");
+      const response = await axios.get(
+        "https://ai-backend-service-bvc9bsd3b7dwaacn.eastus-01.azurewebsites.net/get-images"
+      );
       setImageUrls(response.data);
     } catch (error) {
       console.error("Error fetching images", error);
@@ -25,7 +27,7 @@ function ProductImages() {
     try {
       const fileName = `${Date.now()}_${selectedFile.name}`;
       const response = await axios.get(
-        `http://localhost:5000/generate-sas-url/${fileName}`
+        `https://ai-backend-service-bvc9bsd3b7dwaacn.eastus-01.azurewebsites.net/generate-sas-url/${fileName}`
       );
 
       const formData = new FormData();

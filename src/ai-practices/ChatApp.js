@@ -11,11 +11,14 @@ export default function ChatApp() {
     setResponse("");
 
     try {
-      const res = await fetch("http://localhost:5000/ask", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt }),
-      });
+      const res = await fetch(
+        "https://ai-backend-service-bvc9bsd3b7dwaacn.eastus-01.azurewebsites.net/ask",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ prompt }),
+        }
+      );
 
       const data = await res.json();
       setResponse(data.response);
