@@ -38,7 +38,7 @@ function UserDetail() {
             <div>Company: {user.company.name}</div>
           </p>
           <div>
-            <Link to="/" element={<UserComponent />}>
+            <Link to="/use-effect-cleanup" element={<UserComponent />}>
               User Component
             </Link>
           </div>

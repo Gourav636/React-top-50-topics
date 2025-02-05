@@ -5,8 +5,8 @@ function MyHeader() {
   return (
     <div>
       <nav>
-        <Link to="./home.js">Home</Link>
-        <Link to="./about.js">About</Link>
+        <Link to="">Home</Link>
+        <Link to="about">About</Link>
       </nav>
     </div>
   );

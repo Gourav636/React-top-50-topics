@@ -1,134 +1,141 @@
 import React, { Suspense } from "react";
+import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import "./App.css";
+
 import ControlledForm from "./controlled-and-uncontrolled-form/controlled-form";
 import UnControlledForm from "./controlled-and-uncontrolled-form/uncontrolled-form";
 import CounterExample from "./use-reducer-example/CounterExample";
-import MySuspenseList from "./suspense-list-example/MySuspenseList";
 import Counter from "./use-state-example/counter";
 import ParentComponent from "./use-imperative-handle-example/use-imperative-handle-hook";
 import DynamicImport from "./handle-code-splitting/dynamic-import";
 import ReactMemoCaller from "./react-memo-example/reactmemocaller";
 import ComponentbasedLoading from "./lazy-loading-example/componenet-based-loading";
-import RouterBasedLoading from "./lazy-loading-example/router-based-loading";
 import LayoutComponent from "./use-layout-effect-example/layout-component";
 import BasicRouting from "./routing-handling-example/basic-routing";
-import LinkingRouting from "./routing-handling-example/linking-routing";
-import NestedRouting from "./routing-handling-example/nested-routing";
-import DynamicRouting from "./routing-handling-example/dynamic-routing";
 import UserComponent from "./use-effect-clean-up-example/user-api";
-import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import UserDetail from "./use-effect-clean-up-example/user-detail";
-import SentimentAnalysis from "./ai-practices/SentimentAnalysis.js";
-import Parent from "./react-portals-example/parent.js";
-import CallbackParent from "./use-callback-hook-example/callback-parent.js";
-import CallbackChild from "./use-callback-hook-example/callback-child.js";
-import ForwardRefParentComponent from "./forward-ref-example/forward-ref-parent-component.js";
-import AiList from "./ai-practices/ai-list.js";
+import Parent from "./react-portals-example/parent";
+import CallbackParent from "./use-callback-hook-example/callback-parent";
+import ForwardRefParentComponent from "./forward-ref-example/forward-ref-parent-component";
+import AiList from "./ai-practices/ai-list";
+import SentimentAnalysis from "./ai-practices/SentimentAnalysis";
+import ProductImages from "./ai-practices/ProductImages";
+import ChatApp from "./ai-practices/ChatApp";
+import Home from "./handle-code-splitting/Home";
+import About from "./handle-code-splitting/About";
+import LazyHome from "./lazy-loading-example/lazy-home";
+import LazyAbout from "./lazy-loading-example/lazy-about";
 
 const App = () => {
   return (
     <Router>
-      <h1>Welcome to React!</h1>
-      <div>
-        <fieldset style={{ width: "600px" }}>
-          <legend>Controlled Form</legend>
-          <ControlledForm></ControlledForm>
-        </fieldset>
-        <br></br>
-        <fieldset style={{ width: "600px" }}>
-          <legend>Uncontrolled Form</legend>
-          <UnControlledForm></UnControlledForm>
-        </fieldset>
-        <br></br>
-        <fieldset style={{ width: "600px" }}>
-          <legend>useReducer</legend>
-          <CounterExample></CounterExample>
-        </fieldset>
-        <br></br>
-        <fieldset style={{ width: "600px" }}>
-          <legend>Suspense List</legend>
-          {/* <MySuspenseList /> */}
-        </fieldset>
-        <fieldset style={{ width: "600px" }}>
-          <legend>Use State</legend>
-          <Counter />
-        </fieldset>
-        <fieldset style={{ width: "600px" }}>
-          <legend>useImperativeHandle</legend>
-          <ParentComponent />
-        </fieldset>
-        <fieldset style={{ width: "600px" }}>
-          <legend>dynamic-import</legend>
-          <DynamicImport />
-        </fieldset>
-        <fieldset style={{ width: "600px" }}>
-          <legend>React-Memo</legend>
-          <ReactMemoCaller />
-        </fieldset>
-        <fieldset style={{ width: "600px" }}>
-          <legend>Lazy-loading-and-router-based-component</legend>
-          <ComponentbasedLoading />
-          <br></br>
-          <RouterBasedLoading />
-        </fieldset>
-        <fieldset style={{ width: "600px" }}>
-          <legend>use-Layout-Effect-example</legend>
-          <LayoutComponent />
-        </fieldset>
-        <fieldset style={{ width: "600px" }}>
-          <legend>routing-handle-example</legend>
-          <h3>Basic Routing</h3>
-          <BasicRouting />
-          <hr />
-          <br />
-          <h3>Linking Routing</h3>
-          <LinkingRouting />
-          <hr />
-          <br />
-          <h3>Nested Routing</h3>
-          <NestedRouting />
-          <hr />
-          <br />
-          <h3>Dynamic Routing</h3>
-          <DynamicRouting />
-        </fieldset>
-        <fieldset
-          style={{ width: "100%", padding: "20px", overflow: "hidden" }}
-        >
-          <legend>use-Effect-clean-up-example</legend>
-          <div>
-            <Suspense fallback={<div>Loading...</div>}>
-              <Routes>
-                <Route path="/" element={<UserComponent />} />
-                <Route path="/user/:id" element={<UserDetail />} />
-              </Routes>
-            </Suspense>
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend>react-portal-example</legend>
-          <div id="modal-root"></div>
-          <br></br>
-          <Parent />
-        </fieldset>
-        <fieldset>
-          <legend>use-callback-example</legend>
-          <CallbackParent />
-          <br />
-          <br />
-          <CallbackChild />
-        </fieldset>
-        <fieldset>
-          <legend>forward-ref-example</legend>
-          <ForwardRefParentComponent />
-        </fieldset>
-        <fieldset>
-          <legend>AI Example</legend>
-          <Link to="/AiList">Go to AI List</Link>
-          <Routes>
-            <Route path="/AiList/*" element={<AiList />} />
-          </Routes>
-        </fieldset>
+      {/* Navbar */}
+      <header className="navbar">
+        <h1 className="logo">React Playground</h1>
+      </header>
+
+      {/* App Container */}
+      <div className="app-container">
+        {/* Sidebar Navigation */}
+        <aside className="sidebar">
+          <h2>Components</h2>
+          <ul>
+            <li>
+              <Link to="/controlled-form">Controlled Form</Link>
+            </li>
+            <li>
+              <Link to="/uncontrolled-form">Uncontrolled Form</Link>
+            </li>
+            <li>
+              <Link to="/use-reducer">useReducer</Link>
+            </li>
+            <li>
+              <Link to="/use-state">useState</Link>
+            </li>
+            <li>
+              <Link to="/use-imperative-handle">useImperativeHandle</Link>
+            </li>
+            <li>
+              <Link to="/dynamic-import">Dynamic Import</Link>
+            </li>
+            <li>
+              <Link to="/react-memo">React Memo</Link>
+            </li>
+            <li>
+              <Link to="/lazy-loading">Lazy Loading</Link>
+            </li>
+            <li>
+              <Link to="/use-layout-effect">useLayoutEffect</Link>
+            </li>
+            <li>
+              <Link to="/routing">Routing Examples</Link>
+            </li>
+            <li>
+              <Link to="/use-effect-cleanup">useEffect Cleanup</Link>
+            </li>
+            <li>
+              <Link to="/react-portals">React Portals</Link>
+            </li>
+            <li>
+              <Link to="/use-callback">useCallback</Link>
+            </li>
+            <li>
+              <Link to="/forward-ref">Forward Ref</Link>
+            </li>
+            <li>
+              <Link to="/ai-list">AI Examples</Link>
+            </li>
+          </ul>
+        </aside>
+
+        {/* Main Content */}
+        <main className="content">
+          <Suspense fallback={<div className="loading">Loading...</div>}>
+            <Routes>
+              <Route path="/controlled-form" element={<ControlledForm />} />
+              <Route path="/uncontrolled-form" element={<UnControlledForm />} />
+              <Route path="/use-reducer" element={<CounterExample />} />
+              <Route path="/use-state" element={<Counter />} />
+              <Route
+                path="/use-imperative-handle"
+                element={<ParentComponent />}
+              />
+              <Route path="/dynamic-import" element={<DynamicImport />}>
+                <Route index element={<Home />} />
+                <Route path="about" element={<About />} />
+              </Route>
+              <Route path="/react-memo" element={<ReactMemoCaller />} />
+              <Route path="/lazy-loading" element={<ComponentbasedLoading />}>
+                <Route index element={<LazyHome />} />
+                <Route path="about" element={<LazyAbout />} />
+              </Route>
+              <Route path="/use-layout-effect" element={<LayoutComponent />} />
+              <Route path="/routing" element={<BasicRouting />} />
+              <Route path="/use-effect-cleanup" element={<UserComponent />} />
+              <Route path="/user/:id" element={<UserDetail />} />
+              <Route path="/react-portals" element={<Parent />} />
+              <Route path="/use-callback" element={<CallbackParent />} />
+              <Route
+                path="/forward-ref"
+                element={<ForwardRefParentComponent />}
+              />
+              <Route path="/ai-list" element={<AiList />}>
+                <Route
+                  path="SentimentAnalysis"
+                  element={<SentimentAnalysis />}
+                />
+                <Route path="ProductImages" element={<ProductImages />} />
+                <Route path="ChatApp" element={<ChatApp />} />
+              </Route>
+            </Routes>
+          </Suspense>
+        </main>
       </div>
+
+      {/* Footer */}
+      <footer className="footer">
+        <p>© 2025 React Playground | Built with ❤️ using React.js</p>
+      </footer>
     </Router>
   );
 };

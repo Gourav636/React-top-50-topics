@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./SentimentAnalysis.css"; // Import the CSS file
 
 const SentimentAnalysis = () => {
   const [inputText, setInputText] = useState("");
@@ -12,6 +13,11 @@ const SentimentAnalysis = () => {
     "7HsYJQchHWmb1CqzpxnIc5li0z0bMw5J2JjT9DM1M8BJg1J2P78wJQQJ99BAACYeBjFXJ3w3AAAEACOGITOE";
 
   const analyzeSentiment = async () => {
+    if (!inputText.trim()) {
+      setError("Please enter some text.");
+      return;
+    }
+
     setLoading(true);
     setError(null);
 
@@ -19,13 +25,7 @@ const SentimentAnalysis = () => {
       const response = await axios.post(
         `${endpoint}/text/analytics/v3.0/sentiment`,
         {
-          documents: [
-            {
-              language: "en",
-              id: "1",
-              text: inputText,
-            },
-          ],
+          documents: [{ language: "en", id: "1", text: inputText }],
         },
         {
           headers: {
@@ -35,7 +35,6 @@ const SentimentAnalysis = () => {
         }
       );
 
-      // Extract sentiment results
       const sentimentData = response.data.documents[0];
       setSentiment(sentimentData);
     } catch (err) {
@@ -46,28 +45,48 @@ const SentimentAnalysis = () => {
   };
 
   return (
-    <div className="sentiment-analysis">
+    <div className="sentiment-container">
       <h2>Sentiment Analysis</h2>
       <textarea
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
         rows="5"
-        placeholder="Enter text to analyze sentiment"
+        placeholder="Enter text to analyze sentiment..."
       />
       <button onClick={analyzeSentiment} disabled={loading}>
-        Analyze Sentiment
+        {loading ? "Analyzing..." : "Analyze Sentiment"}
       </button>
 
-      {loading && <p>Loading...</p>}
+      {loading && <div className="loader"></div>}
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p className="error-message">{error}</p>}
 
       {sentiment && (
-        <div>
-          <h3>Sentiment: {sentiment.sentiment}</h3>
-          <p>Positive: {sentiment.confidenceScores.positive}</p>
-          <p>Neutral: {sentiment.confidenceScores.neutral}</p>
-          <p>Negative: {sentiment.confidenceScores.negative}</p>
+        <div className="sentiment-result">
+          <h3>
+            Sentiment:{" "}
+            <span className={`sentiment-${sentiment.sentiment}`}>
+              {sentiment.sentiment.toUpperCase()}
+            </span>
+          </h3>
+          <p>
+            <strong>Positive:</strong>{" "}
+            <span className="positive-score">
+              {sentiment.confidenceScores.positive.toFixed(2)}
+            </span>
+          </p>
+          <p>
+            <strong>Neutral:</strong>{" "}
+            <span className="neutral-score">
+              {sentiment.confidenceScores.neutral.toFixed(2)}
+            </span>
+          </p>
+          <p>
+            <strong>Negative:</strong>{" "}
+            <span className="negative-score">
+              {sentiment.confidenceScores.negative.toFixed(2)}
+            </span>
+          </p>
         </div>
       )}
     </div>

@@ -1,4 +1,3 @@
-/* Make sure everything stays inside the fieldset */
 fieldset {
     border: 2px solid #0078d4;
     padding: 20px;
@@ -20,7 +19,6 @@ legend {
     background-color: #f9f9f9;
 }
 
-/* Navigation Link style */
 .nested-fieldset a {
     text-decoration: none;
     font-size: 1.1rem;
@@ -31,7 +29,6 @@ legend {
     text-decoration: underline;
 }
 
-/* Responsive gallery layout */
 .gallery {
     margin-top: 30px;
     display: grid;
@@ -59,7 +56,6 @@ legend {
     margin-right: 10px;
 }
 
-/* Ensure everything is nicely spaced within the container */
 .container {
     font-family: 'Arial', sans-serif;
     background-color: #f9f9f9;
@@ -78,7 +74,6 @@ h2 {
     font-weight: 700;
 }
 
-/* File input and upload button styling */
 .upload-container {
     margin-bottom: 30px;
     display: flex;
@@ -121,7 +116,6 @@ h2 {
     transform: translateY(1px);
 }
 
-/* No images message */
 .gallery p {
     font-size: 1.2rem;
     color: #555;

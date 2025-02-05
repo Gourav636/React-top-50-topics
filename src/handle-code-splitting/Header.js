@@ -5,8 +5,8 @@ function Header() {
   return (
     <div>
       <nav>
-        <Link to="./Home.js">Home</Link>
-        <Link to="./About.js">About</Link>
+        <Link to="">Home</Link>
+        <Link to="About">About</Link>
       </nav>
     </div>
   );
