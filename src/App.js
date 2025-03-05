@@ -25,6 +25,7 @@ import Home from "./handle-code-splitting/Home";
 import About from "./handle-code-splitting/About";
 import LazyHome from "./lazy-loading-example/lazy-home";
 import LazyAbout from "./lazy-loading-example/lazy-about";
+import Upload from "./ai-practices/ai-image-text-process-to-english";
 
 const App = () => {
   return (
@@ -126,6 +127,7 @@ const App = () => {
                 />
                 <Route path="ProductImages" element={<ProductImages />} />
                 <Route path="ChatApp" element={<ChatApp />} />
+                <Route path="imageTextExtract" element={<Upload />} />
               </Route>
             </Routes>
           </Suspense>
